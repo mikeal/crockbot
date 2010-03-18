@@ -55,7 +55,8 @@ var request = function (uri, method, body, headers, client, encoding, callback) 
 function crockbot (message) {
   request('http://crockfordfacts.com/', 'GET', undefined, undefined, undefined, undefined, 
     function (error, response, body) {
-      message.say(body.split('<h2>')[1].split('</h2>')[0]);
+      var c = JSON.parse(body);
+      message.say((c.credit) ? c.fact + ' ' + c.credit : c.fact);
     })
 }
 
