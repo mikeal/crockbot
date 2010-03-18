@@ -59,7 +59,8 @@ function crockbot (message) {
     })
 }
 
-var channelMessages = {};
+var channelMessages = {},
+    nick = "crockbot";
   
 jerk.jerk(function (j) {
   j.watch_for('', function (message) {
@@ -70,8 +71,14 @@ jerk.jerk(function (j) {
     }
   })
   
-  j.watch_for("crockbot", function (message) {
+  j.watch_for("crockford", function (message) {
     crockbot(message);
   })
-}).connect({nick:"crockbot", channels:["#windmill", "#node.js", "#couchdb"], server:"irc.freenode.net"})
+  j.watch_for("Crockford", function (message) {
+    crockbot(message);
+  })
+  j.watch_for(nick, function (message) {
+    crockbot(message);
+  })
+}).connect({nick:nick, channels:["#windmill", "#node.js", "#couchdb", "#yajl"], server:"irc.freenode.net"})
     
