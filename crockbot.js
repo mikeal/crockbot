@@ -63,13 +63,13 @@ var channelMessages = {},
     nick = "crockbot";
   
 jerk.jerk(function (j) {
-  j.watch_for('', function (message) {
-    if (message.channel !== "crockbot" && !channelMessages[message.channel]) {
-      channelMessages[message.channel] = message;
-      crockbot(message)
-      setInterval(function () {crockbot(message)}, 1 * 1000 * 60 * 60)
-    }
-  })
+  // j.watch_for('', function (message) {
+  //   if (message.channel !== "crockbot" && !channelMessages[message.channel]) {
+  //     channelMessages[message.channel] = message;
+  //     crockbot(message)
+  //     setInterval(function () {crockbot(message)}, 1 * 1000 * 60 * 60)
+  //   }
+  // })
   
   j.watch_for("crockford", function (message) {
     crockbot(message);
