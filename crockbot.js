@@ -1,4 +1,4 @@
-var jerk = require('../Jerk/lib/jerk'),
+var jerk = require('./Jerk/lib/jerk'),
     sys = require('sys'),
     http = require('http'),
     url = require('url');
